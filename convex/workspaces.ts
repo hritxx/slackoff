@@ -2,6 +2,14 @@ import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 import { getAuthUserId } from "@convex-dev/auth/server";
 
+const generateCode = () => {
+  const code = Array.from(
+    { length: 6 },
+    () => "0123456789qwertyuiopasdfghjklzxcvbnm"[Math.floor(Math.random() * 36)]
+  ).join("");
+  return code;
+};
+
 export const get = query({
   args: {},
   handler: async (ctx) => {
@@ -39,7 +47,7 @@ export const create = mutation({
       throw new Error("Unauthorized");
     }
 
-    const joinCode = "123456";
+    const joinCode = generateCode();
 
     const workspaceId = await ctx.db.insert("workspaces", {
       name: args.name,
