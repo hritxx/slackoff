@@ -1,5 +1,9 @@
+import { TrashIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "sonner";
 
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogTrigger,
@@ -9,16 +13,12 @@ import {
   DialogTitle,
   DialogClose,
 } from "@/components/ui/dialog";
-import { TrashIcon } from "lucide-react";
-
-import { useUpdateWorkspace } from "@/features/workspaces/api/use-update-workspace";
-import { useRemoveWorkspace } from "@/features/workspaces/api/use-remove-workspace";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { useWorkspaceId } from "@/hooks/use-workspace-id";
-import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+import { useRemoveWorkspace } from "@/features/workspaces/api/use-remove-workspace";
+import { useUpdateWorkspace } from "@/features/workspaces/api/use-update-workspace";
 import { useConfirm } from "@/hooks/use-confirm";
+import { useWorkspaceId } from "@/hooks/use-workspace-id";
+
 
 interface PreferencesModalProps {
   open: boolean;

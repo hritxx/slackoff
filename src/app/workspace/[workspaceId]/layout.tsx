@@ -1,13 +1,13 @@
 "use client";
 
-import { Sidebar } from "./sidebar";
-import { Toolbar } from "./toolbar";
-
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+
+import { Sidebar } from "./sidebar";
+import { Toolbar } from "./toolbar";
 import { WorkspaceSidebar } from "./workspace-sidebar";
 
 interface WorkspaceIdLayoutProps {

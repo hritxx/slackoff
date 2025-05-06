@@ -1,3 +1,4 @@
+import { DialogDescription } from "@radix-ui/react-dialog";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,6 @@ import {
   DialogTitle,
   DialogClose,
 } from "@/components/ui/dialog";
-import { DialogDescription } from "@radix-ui/react-dialog";
 
 export const useConfirm = (
   title: string,

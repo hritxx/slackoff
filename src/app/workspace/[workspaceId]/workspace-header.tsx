@@ -1,5 +1,7 @@
-import { useState } from "react";
 import { ChevronDown, ListFilter, SquarePen } from "lucide-react";
+import { useState } from "react";
+
+import { Hint } from "@/components/hint";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,9 +10,9 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { Hint } from "@/components/hint";
 
 import { Doc } from "../../../../convex/_generated/dataModel";
+
 import { PreferencesModal } from "./preferences-modal";
 
 interface WorkspaceHeaderProps {
