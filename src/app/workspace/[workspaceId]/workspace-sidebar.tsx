@@ -6,20 +6,21 @@ import {
   SendHorizontal,
 } from "lucide-react";
 
-import { useGetChannels } from "@/features/channels/api/use-get-channels";
-import { useCreateChannelModal } from "@/features/channels/store/use-create-channel-modal";
-import { useCurrentMember } from "@/features/members/api/use-current-member";
-import { useGetMembers } from "@/features/members/api/use-get-members";
-import { useGetWorkspace } from "@/features/workspaces/api/use-get-workspace";
-import { useWorkspaceId } from "@/hooks/use-workspace-id";
-
 import { SidebarItem } from "./sidebar-item";
 import { UserItem } from "./user-item";
 import { WorkspaceHeader } from "./workspace-header";
 import { WorkspaceSection } from "./workspace-section";
+import { useChannelId } from "@/hooks/use-channel-id ";
+import { useCreateChannelModal } from "@/features/channels/store/use-create-channel-modal";
+import { useCurrentMember } from "@/features/members/api/use-current-member";
+import { useGetChannels } from "@/features/channels/api/use-get-channels";
+import { useGetMembers } from "@/features/members/api/use-get-members";
+import { useGetWorkspace } from "@/features/workspaces/api/use-get-workspace";
+import { useWorkspaceId } from "@/hooks/use-workspace-id";
 
 export const WorkspaceSidebar = () => {
   const workspaceId = useWorkspaceId();
+  const channelId = useChannelId();
 
   const [_open, setOpen] = useCreateChannelModal();
 
@@ -60,12 +61,7 @@ export const WorkspaceSidebar = () => {
         isAdmin={member.role === "admin"}
       />
       <div className="flex flex-col px-2 mt-3">
-        <SidebarItem
-          label="Threads"
-          icon={MessageSquareText}
-          id="threads"
-          variant="active"
-        />
+        <SidebarItem label="Threads" icon={MessageSquareText} id="threads" />
         <SidebarItem
           label="Drafts and Sent"
           icon={SendHorizontal}
@@ -83,6 +79,7 @@ export const WorkspaceSidebar = () => {
             label={item.name}
             id={item._id}
             icon={HashIcon}
+            variant={channelId === item._id ? "active" : "default"}
           />
         ))}
       </WorkspaceSection>
