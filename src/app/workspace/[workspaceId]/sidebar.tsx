@@ -1,4 +1,4 @@
-import { Home, MessagesSquare, Bell, MoreHorizontal } from "lucide-react";
+import { Bell, Home, MessagesSquare, MoreHorizontal } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import UserButton from "@/features/auth/components/user-button";

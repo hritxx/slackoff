@@ -2,8 +2,8 @@
 
 import {
   Tooltip,
-  TooltipProvider,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
 
