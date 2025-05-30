@@ -18,7 +18,6 @@ export const ChatInput = ({ placeholder }: ChatInputProps) => {
         onSubmit={() => {}}
         disabled={false}
         innerRef={editorRef}
-        variant="create"
       />
     </div>
   );
